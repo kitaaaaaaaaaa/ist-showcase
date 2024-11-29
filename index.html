@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Interactive Timeline with Locomotive Scroll</title>
+  <!-- <link rel="stylesheet" href="https://unpkg.com/locomotive-scroll/dist/locomotive-scroll.min.css"> -->
+  <link rel="stylesheet" href="libs/locomotive-scroll.min.css">
+  <link rel="stylesheet" href="styles.css">
+
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Golos+Text:wght@400..900&display=swap" rel="stylesheet">
+</head>
+<body>
+<div data-scroll-container style="height: 4000px;">
+  <!-- Title Screen -->
+  <section class="title-screen">
+    <div class="title-content">
+      <h1>2024 IST Timeline</h1>
+      <p>woah cool text that totally means something meaningful</p>
+    </div>
+  </section>
+
+
+  <div class="timeline-container">
+    <div class="timeline">
+    <!-- Event 1 -->
+    <div class="timeline-item left" data-scroll data-scroll-class="show">
+      <div class="content">
+          <h3>Building LEGO Mindstorms Robots</h3><span class="event-date">Term 1, Week 2</span>
+          <p>For one of our IST projects, I helped build LEGO Mindstorms robots for the school Open Day. We set them up to do cool stuff like follow a line, play drums, and row a boat!</p>
+          <button onclick="toggleDetails(this)">Show Details</button>
+          <div class="details">
+              <p>Our class put together and programmed different robots. One could follow a line on the floor, another played drums, and we even made a robot that could row a boat. It was awesome to see how coding and robotics can make everyday things come to life in fun ways!</p>
+              <!-- Bento Grid of Images -->
+              <div class="bento-grid">
+                  <div class="bento-item"><img src="assets/image1.JPG" alt="Image 1"></div>
+                  <div class="bento-item"><img src="assets/image2.jpg" alt="Image 2"></div>
+                  <div class="bento-item"><img src="assets/image3.jpg" alt="Image 3"></div>
+              </div>
+          </div>
+      </div>
+    </div>
+
+      <!-- Event 2 -->
+      <div class="timeline-item right" data-scroll data-scroll-class="show">
+        <div class="content">
+          <h3>Creating Cel-Based Animation and GIF</h3><span class="event-date">Term 1, Week 4</span>
+          <p>For one of my IST projects, I created a short cel-based animation using Google Slides and made a simple GIF of a bouncing ball. It was a fun introduction to animation!</p>
+          <button onclick="toggleDetails(this)">Show Details</button>
+          <div class="details">
+            <p>A cel-based animation is created by drawing individual frames, with each slide in Google Slides acting as a new frame. I used this technique to animate a character or object, making it appear to move. I also made a GIF of a bouncing ball, which helped me understand looping and frame rates in animation. It was a cool way to explore motion graphics without using complex software.</p>
+            
+            <!-- Bento Grid of Images -->
+            <div class="bento-grid" id="Event2">
+              <div class="bento-item"><img src="assets/ball.gif" alt="Image 1"></div>
+              <div class="bento-item"><img src="assets/ball2.gif" alt="Image 2"></div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+      <!-- Event 3 -->
+      <div class="timeline-item left" data-scroll data-scroll-class="show">
+        <div class="content">
+          <h3>Event 3</h3>
+          <p>This is a short description of Event 3.</p>
+          <button onclick="toggleDetails(this)">Show Details</button>
+          <p class="details">Detailed information about Event 3. This section appears when the button is clicked.</p>
+        </div>
+      </div>
+      <!-- Event 4 -->
+      <div class="timeline-item right" data-scroll data-scroll-class="show">
+        <div class="content">
+          <h3>Event 4</h3>
+          <p>This is a short description of Event 4.</p>
+          <button onclick="toggleDetails(this)">Show Details</button>
+          <p class="details">Detailed information about Event 4. This section appears when the button is clicked.</p>
+        </div>
+      </div>
+      <!-- Event 5 -->
+      <div class="timeline-item left" data-scroll data-scroll-class="show">
+        <div class="content">
+          <h3>Event 5</h3>
+          <p>This is a short description of Event 5.</p>
+          <button onclick="toggleDetails(this)">Show Details</button>
+          <p class="details">Detailed information about Event 3. This section appears when the button is clicked.</p>
+        </div>
+      </div>
+
+      
+
+
+
+
+
+    </div>
+  </div>
+</div>
+
+  <script src="libs/locomotive-scroll.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>

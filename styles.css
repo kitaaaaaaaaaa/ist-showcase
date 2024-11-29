@@ -1,0 +1,317 @@
+/* Reset styles */
+body, html {
+  font-family: 'Golos Text', sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f4f4f4;
+  overflow: hidden; /* Prevent default scroll behavior */
+}
+
+/* Timeline container */
+.timeline-container {
+  width: 90%; /* Adjust width for smaller screens */
+  margin: 0 auto;
+  position: relative;
+  padding: 50px 0;
+  overflow: visible;
+}
+
+.timeline {
+  overflow: visible;
+  position: relative;
+  margin: 0 auto;
+  width: 6px;
+  border-radius: 4px;
+  background: linear-gradient(to bottom, #007bff, #0056b3);
+  height: 100%;
+}
+
+/* Timeline item */
+.timeline-item {
+  position: relative;
+  margin: 100px 0; /* Equal vertical spacing for all items */
+  opacity: 0;
+  transform: translateY(20px);
+  left: -14.1em; /*Aligning them to centre */
+  transition: opacity 0.5s, transform 0.5s;
+}
+
+.timeline-item.left,
+.timeline-item.right {
+  text-align: right; /* Align text consistently */
+}
+
+.timeline-item.left .content, .timeline-item.right .content {
+  position: relative;
+  margin-right: auto;
+  margin-left: auto;
+  max-width: 410px;
+  min-width: 410px;
+  background-color: white;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add subtle shadow */
+}
+
+h3 {
+  margin: 4px;
+}
+
+/* Style for the event date */
+.event-date {
+  font-size: 0.9em;
+  color: #888; /* Light grey color */
+  margin-right: 4px;
+}
+
+
+
+
+
+/* Title Screen Styles */
+.title-screen {
+  position: absolute; /* Position it relative to the scroll container */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh; /* Full viewport height */
+  background-image: url('assets/image3.jpg');
+  background-size: cover;
+  background-position: center;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  z-index: 10;
+  opacity: 1;
+  transition: opacity 1s ease-out, transform 1s ease-out; /* Fade-out and slide-out effects */
+  position: relative;
+}
+
+.title-screen::before {
+  content: ''; /* Empty content for the overlay */
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Dark overlay with 50% opacity */
+  z-index: 1; /* Place the overlay behind the text */
+}
+
+.title-content {
+  position: relative;
+  z-index: 2; /* Ensure text stays above the overlay */
+}
+
+.title-content h1 {
+  font-size: 3em;
+  font-family: 'Roboto', sans-serif;
+  margin-bottom: 20px;
+}
+
+.title-content p {
+  font-size: 1.2em;
+  margin-bottom: 40px;
+  color: #bbb;
+}
+
+/* Style for when title screen disappears */
+.title-screen.hide {
+  opacity: 0;
+  transform: translateY(-100%);
+}
+
+/* Make the timeline items start appearing after the title screen */
+.timeline-container {
+  padding-top: 0; /* Ensures timeline starts after title screen */
+}
+
+
+
+
+
+
+
+
+
+
+.timeline-item.left .content {
+  left: -270px;
+}
+
+.timeline-item.right .content {
+  right: -270px;
+}
+
+
+
+
+/* Details section */
+.details {
+  height: 0; /* Initial collapsed state */
+  overflow: hidden;
+  font-size: 1em;
+  margin-top: 0; /* Remove margin when collapsed */
+  margin-bottom: 1%;
+  color: #555;
+  transition: height 0.7s ease, margin-top 0.5s ease; /* Smooth animation for expand/collapse */
+}
+
+.details.expanded {
+  margin-top: 20px; /* Add margin only when expanded */
+}
+
+/* img {
+  margin: 10px;
+  border-radius: 5px;
+} */
+
+/* Bento Grid for images */
+.bento-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); /* Auto-layout columns */
+  gap: 20px; /* Add space between items */
+  margin-top: 20px;
+  grid-template-rows: repeat(auto-fill, minmax(200px, 1fr)); /* Make rows dynamic */
+  padding: 0 10px;
+  padding-bottom: 15px;
+}
+
+/* Bento Items */
+.bento-item {
+  background-color: #f0f0f0;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease-in-out;
+  position: relative; /* Allows for dynamic positioning */
+  height: 100%; /* Fill available space */
+}
+
+/* Specific Item Sizes */
+.bento-item:nth-child(1) {
+  grid-column: span 1; /* Makes the first item take up two columns */
+  grid-row: span 1; /* Makes the first item take up two rows */
+}
+
+.bento-item:nth-child(2) {
+  grid-column: span 1;
+  grid-row: span 2; /* Makes the second item taller */
+}
+
+#Event2 {
+  .bento-item:nth-child(2) {
+    grid-column: span 1;
+    grid-row: span 1 !important;
+  }
+}
+
+
+.bento-item:nth-child(3) {
+  grid-column: span 1;
+  grid-row: span 1;
+}
+
+.bento-item:nth-child(4) {
+  grid-column: span 1;
+  grid-row: span 2;
+}
+
+.bento-item:nth-child(5) {
+  grid-column: span 2;
+  grid-row: span 1; /* Makes the last item wider */
+}
+
+.bento-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease-in-out;
+}
+
+/* Hover effects */
+.bento-item:hover {
+  transform: scale(1.05); /* Slight zoom effect */
+}
+
+.bento-item img:hover {
+  transform: scale(1.1); /* Zoom in on image */
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Buttons */
+button {
+  font-family: 'Golos Text';
+  margin-top: 10px;
+  padding: 8px 12px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+
+  transition-duration: 0.5s;
+}
+
+button:hover {
+  background-color: #0056b3;
+  transition-duration: 0.5s;
+}
+
+/* Animations triggered by Locomotive Scroll */
+.timeline-item.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.timeline-item.left.show .content,
+.timeline-item.right.show .content {
+  transform: translateX(0);
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .timeline-container {
+    width: 100%;
+    padding: 20px;
+  }
+
+  .timeline {
+    width: 2px;
+  }
+
+  .timeline-item.left .content,
+  .timeline-item.right .content {
+    position: relative;
+    left: 0;
+    right: 0;
+    margin: 0 auto; /* Center timeline items */
+    text-align: center; /* Align text to the center */
+    max-width: 90%; /* Allow full-width on smaller screens */
+  }
+
+  .timeline-item {
+    margin: 30px 0; /* Spacing for smaller screens */
+  }
+}
