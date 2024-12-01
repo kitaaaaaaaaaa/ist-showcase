@@ -37,3 +37,10 @@ document.querySelector('.scroll-down').addEventListener('click', () => {
       easing: [0.25, 0.00, 0.35, 1.00] // Easing for smoothness
     });
   });
+
+
+document.querySelectorAll('img').forEach(img => {
+    img.addEventListener('load', () => {
+        img.classList.add('loaded');
+    });
+});
