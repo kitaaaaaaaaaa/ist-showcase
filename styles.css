@@ -180,13 +180,14 @@ h3 {
 } */
 
 
-img {
-  filter: blur(20px);
-  transition: filter 0.3s ease-in-out;
+img.blurred {
+  filter: blur(10px);
+  transition: filter 0.3s ease-out; /* Smooth transition when blur is removed */
 }
 
-img.loaded {
-  filter: blur(0);
+img {
+  filter: none; /* Reset filter when class is removed */
+  transition: filter 0.3s ease-out;
 }
 
 
@@ -237,7 +238,6 @@ img.loaded {
   }
 }
 
-
 #event3 {
   .bento-item:nth-child(1) {
     grid-column: span 2;
@@ -252,7 +252,6 @@ img.loaded {
   }
 }
 
-
 #event4 {
   .bento-item:nth-child(1) {
     grid-column: span 2;
@@ -266,23 +265,31 @@ img.loaded {
   }
 }
 
+#event5 {
+  .bento-item:nth-child(1) {
+    grid-column: span 2;
+    grid-row: span 2;
+  }
+}
+
 #event6 {
+  .bento-item:nth-child(7) {
+    grid-column: span 2;
+    grid-row: span 1;
+  }
+}
+
+#event7 {
   .bento-item:nth-child(1) {
     grid-column: span 2;
     grid-row: span 12;
   }
 }
 
-#event6 {
+
+#event7 {
   .bento-item:hover {
     transform: scale(1);
-  }
-}
-
-#event5 {
-  .bento-item:nth-child(7) {
-    grid-column: span 2;
-    grid-row: span 1;
   }
 }
 
@@ -441,7 +448,7 @@ button:hover {
   bottom: 30px; /* Position it near the bottom of the screen */
   left: 50%;
   transform: translateX(-50%);
-  font-size: 1.9em; /* Increase font size for the icon */
+  font-size: 1.8em; /* Increase font size for the icon */
   color: white;
   cursor: pointer;
   z-index: 2; /* Ensure it's above other content */
@@ -460,3 +467,4 @@ button:hover {
     transform: translateX(-50%) translateY(-5px);
   }
 }
+

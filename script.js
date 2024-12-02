@@ -39,8 +39,29 @@ document.querySelector('.scroll-down').addEventListener('click', () => {
   });
 
 
-document.querySelectorAll('img').forEach(img => {
+// Select all images with the "blurred" class
+const images = document.querySelectorAll('img.blurred');
+
+// Add event listeners to remove the blur on load or handle errors
+images.forEach((img) => {
+    // Remove blur when the image is loaded
     img.addEventListener('load', () => {
-        img.classList.add('loaded');
+        img.classList.remove('blurred');
+    });
+
+    // Handle errors (e.g., if the image fails to load)
+    img.addEventListener('error', () => {
+        img.classList.remove('blurred'); // Remove blur even on failure
+        img.src = 'path/to/fallback-image.jpg'; // Set fallback image (optional)
     });
 });
+
+images.forEach((img) => {
+    const timeout = setTimeout(() => {
+        img.classList.remove('blurred'); // Remove blur after 5 seconds
+    }, 5000); // Adjust the timeout duration as needed
+
+    img.addEventListener('load', () => clearTimeout(timeout));
+    img.addEventListener('error', () => clearTimeout(timeout));
+});
+
